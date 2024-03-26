@@ -1,0 +1,11 @@
+# Default ignored files
+
+.idea/
+
+src/main/resources/LICENSE.md
+
+src/main/resources/README.md
+
+target/
+
+UnitedClans.iml

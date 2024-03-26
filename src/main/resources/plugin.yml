@@ -1,0 +1,88 @@
+name: UnitedClans
+version: '${project.version}'
+main: unitedclans.UnitedClans
+api-version: '1.20'
+authors: [MouseJava]
+softdepend: [PlaceholderAPI]
+description: The plugin implements the clan system in Minecraft
+commands:
+  createclan:
+    description: This command allows you to create a clan
+    usage: /<command> <clan name> <color>
+    aliases:
+      - cclan
+  deleteclan:
+    description: This command allows you to delete a clan
+    usage: /<command> <clan name>
+    aliases:
+      - dclan
+  inviteclan:
+    description: This command allows you to invite a player to a clan
+    usage: /<command> <player>
+    aliases:
+      - iclan
+  acceptclan:
+    description: This command allows you to accept an invitation to a clan
+    usage: /<command>
+    aliases:
+      - aclan
+  kickclan:
+    description: This command allows you to kick a player from the clan
+    usage: /<command> <player>
+    aliases:
+      - kclan
+  leaveclan:
+    description: This command allows the player to leave the clan
+    usage: /<command> <clan name>
+    aliases:
+      - lclan
+  setroleclan:
+    description: This command allows you to set the role of the player
+    usage: /<command> <player> <role>
+    aliases:
+      - srclan
+  menuclan:
+    description: This command allows you to open the clan menu
+    usage: /<command>
+    aliases:
+      - mclan
+  chatclan:
+    description: This command allows you to send messages to the clan chat
+    usage: /<command> <message>
+    aliases:
+      - msgclan
+      - msgc
+      - cc
+  changeleaderclan:
+    description: This command allows you to change the clan Leader
+    usage: /<command> <clan name> <player>
+    aliases:
+      - clclan
+  bankdepositclan:
+    description: This command allows you to deposit currency into the clan's bank account
+    usage: /<command> <number>
+    aliases:
+      - bankdclan
+      - bdclan
+  bankwithdrawclan:
+    description: This command allows you to withdraw currency from a clan bank account
+    usage: /<command> <number>
+    aliases:
+      - bankwclan
+      - bwclan
+  topclans:
+    description: This command allows you to open the top clans
+    usage: /<command> <top name>
+    aliases:
+      - tclans
+      - tc
+  letterclan:
+    description: This command allows you to create and view a letter to the clan
+    usage: /<command> <letter (not necessary)>
+    aliases:
+      - letclan
+  helpclan:
+    description: This command allows you to display all possible plugin commands
+    usage: /<command>
+    aliases:
+      - hclan
