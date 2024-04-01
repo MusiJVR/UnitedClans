@@ -39,12 +39,15 @@ public class ClanMenuInventoryHandler implements Listener {
             } else if (Objects.equals(event.getCurrentItem().getItemMeta().getDisplayName(), "§a" + LocalizationUtils.langCheck(language, "CLAN_MEMBERS"))) {
                 pageNumber = MenuClanUtils.openMembersMenu(player, sql, 0);
                 player.playSound(player.getLocation(), Sound.BLOCK_STONE_PLACE, 1.0f, 1.0f);
-            } else if (Objects.equals(event.getCurrentItem().getItemMeta().getDisplayName(), "§5" + LocalizationUtils.langCheck(language, "CLAN_SETTINGS"))) {
-                MenuClanUtils.openClanSettingsMenu(player);
-                player.playSound(player.getLocation(), Sound.BLOCK_STONE_PLACE, 1.0f, 1.0f);
             } else if (Objects.equals(event.getCurrentItem().getItemMeta().getDisplayName(), "§b" + LocalizationUtils.langCheck(language, "TOP_CLANS"))) {
                 MenuClanUtils.openTopClanMenu(player);
                 player.playSound(player.getLocation(), Sound.BLOCK_STONE_PLACE, 1.0f, 1.0f);
+            } else if (Objects.equals(event.getCurrentItem().getItemMeta().getDisplayName(), "§5" + LocalizationUtils.langCheck(language, "CLAN_SETTINGS"))) {
+                MenuClanUtils.openClanSettingsMenu(player);
+                player.playSound(player.getLocation(), Sound.BLOCK_STONE_PLACE, 1.0f, 1.0f);
+            } else if (Objects.equals(event.getCurrentItem().getItemMeta().getDisplayName(), "§6" + LocalizationUtils.langCheck(language, "CLAN_INFO"))) {
+                plugin.getServer().dispatchCommand(player, "infoclan");
+                player.closeInventory();
             }
             event.setCancelled(true);
         } else if (event.getView().getTitle().equalsIgnoreCase(ChatColor.BOLD + LocalizationUtils.langCheck(language, "MEMBERS_MENU"))) {

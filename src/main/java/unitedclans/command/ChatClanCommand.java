@@ -43,7 +43,7 @@ public class ChatClanCommand implements CommandExecutor {
                 message.append(" " + args[i]);
             }
 
-            String messagepattern = UnitedClans.getInstance().getConfig().getString("clan-msg-pattern");
+            String messagePattern = UnitedClans.getInstance().getConfig().getString("clan-msg-pattern");
             List<Map<String, Object>> rsClan = sql.sqlSelectData("ClanName, ClanColor", "CLANS", "ClanID = " + senderClanID);
             String clanName = (String) rsClan.get(0).get("ClanName");
             String clanColor = (String) rsClan.get(0).get("ClanColor");
@@ -55,7 +55,7 @@ public class ChatClanCommand implements CommandExecutor {
                 if (playerClan == null) {
                     continue;
                 }
-                playerClan.sendMessage(messagepattern.replace("%clan%", ChatColor.valueOf(clanColor) + (ChatColor.BOLD + clanName + ChatColor.RESET)).replace("%sender%", playerSender.getName()).replace("%message%", message));
+                playerClan.sendMessage(messagePattern.replace("%clan%", ChatColor.valueOf(clanColor) + (ChatColor.BOLD + clanName + ChatColor.RESET)).replace("%sender%", playerSender.getName()).replace("%message%", message));
             }
         } catch (Exception e) {
             System.err.println(e.getClass().getName() + ": " + e.getMessage());

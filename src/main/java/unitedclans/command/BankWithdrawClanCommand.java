@@ -61,8 +61,8 @@ public class BankWithdrawClanCommand implements CommandExecutor {
             String senderClanName = (String) rsBank.get(0).get("ClanName");
             Integer bankAccount = (Integer) rsBank.get(0).get("Bank");
             if (bankAccount - withdraw < 0) {
-                String emptybankmsg = LocalizationUtils.langCheck(language, "EMPTY_BANK");
-                sender.sendMessage(emptybankmsg.replace("%value%", bankAccount.toString()));
+                String msgEmptyBank = LocalizationUtils.langCheck(language, "EMPTY_BANK");
+                sender.sendMessage(msgEmptyBank.replace("%value%", bankAccount.toString()));
                 playerSender.playSound(playerSender.getLocation(), Sound.ENTITY_PLAYER_ATTACK_STRONG, 1.0f, 1.0f);
                 return true;
             }
@@ -84,8 +84,8 @@ public class BankWithdrawClanCommand implements CommandExecutor {
                 playerSender.getInventory().addItem(new ItemStack(Material.valueOf(UnitedClans.getInstance().getConfig().getString("server-currency"))));
             }
 
-            String successfullywithdrawbankmsg = LocalizationUtils.langCheck(language, "SUCCESSFULLY_WITHDRAW_BANK");
-            sender.sendMessage(successfullywithdrawbankmsg.replace("%value%", withdraw.toString()));
+            String msgSuccessfullyWithdrawBank = LocalizationUtils.langCheck(language, "SUCCESSFULLY_WITHDRAW_BANK");
+            sender.sendMessage(msgSuccessfullyWithdrawBank.replace("%value%", withdraw.toString()));
             playerSender.playSound(playerSender.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
 
             plugin.getServer().getLogger().info("[UnitedClans] " + playerSender.getName() + " withdrew " + withdraw + "$ from the " + senderClanName + " clan bank");

@@ -3,8 +3,12 @@
 
 **UnitedClans** adds a clan system with economic elements to the server!
 
+All technical settings and features presented here are for the latest version of the plugin and will not always work on older versions.
+
 ## Commands
 Here are all the commands that can be used in the plugin:
+* `/helpclan` - This command allows you to display all possible plugin commands
+* `/infoclan <clan name (not necessary)>` - This command allows you to view information about the clan
 * `/createclan <clan name> <color>` - This command allows you to create a clan
 * `/deleteclan <clan name>` - This command allows you to delete a clan
 * `/inviteclan <player>` - This command allows you to invite a player to a clan
@@ -19,7 +23,6 @@ Here are all the commands that can be used in the plugin:
 * `/bankwithdrawclan <number>` - This command allows you to withdraw currency from a clan bank account
 * `/topclans <top name>` - This command allows you to open the top clans
 * `/letterclan <letter (not necessary)>` - This command allows you to create and view a letter to the clan
-* `/helpclan` - This command allows you to display all possible plugin commands
 
 ## Config
 When the server starts, the config file will be automatically created in this path: `plugins/UnitedClans/config.yml`
@@ -42,20 +45,23 @@ roles:
 * `clan-max-player` - This parameter is responsible for the maximum number of players in the clan (the value must not be less than `1` and greater than `100`)
 * `server-currency` - This parameter is responsible for the server currency that the plugin will use as the main one
 * `clan-creation-price` - This parameter is responsible for the cost of creating a clan, in the currency specified in the `server-currency` parameter (the value must not be less than `0` and greater than `64`)
-* `roles` - These parameters are responsible for setting up roles in the plugin, **I don't recommend touching them**
+* `roles` - These parameters are responsible for setting up roles in the plugin, *I don't recommend touching them*
 
 ## Dependencies
-In the **UnitedClans** plugin it is possible to use external placeholders `PlaceholderAPI`, which allow you to get clan names, player roles and various clan points
-In order to use placeholders, the latest version of [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) must be installed on the server
+In the **UnitedClans** plugin it is possible to use external placeholders `PlaceholderAPI`, which allow you to get clan names, player roles and various clan points.
+In order to use placeholders, the latest version of [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) must be installed on the server.
 
-All possible placeholders are presented here:
-* `%unitedclans_clanName%`
-* `%unitedclans_clanCountMembers%`
-* `%unitedclans_clanKills%`
-* `%unitedclans_clanBank%`
-* `%unitedclans_playerRole%`
-* `%unitedclans_playerKills%`
-* `%unitedclans_playerDonations%`
+This table presents all possible placeholders:
+
+|         **Placeholders**         |     **Meaning**     |
+|----------------------------------|---------------------|
+| `%unitedclans_clanName%`         | Clan name           |
+| `%unitedclans_clanCountMembers%` | Clan count members  |
+| `%unitedclans_clanKills%`        | Clan count kills    |
+| `%unitedclans_clanBank%`         | Clan bank           |
+| `%unitedclans_playerRole%`       | Player clan role    |
+| `%unitedclans_playerKills%`      | Player count kills  |
+| `%unitedclans_playerDonations%`  | Player donations    |
 
 ## Issues
 Please leave messages about any errors you find [here](https://github.com/MusiJVR/UnitedClans/issues) or on the [Discord](https://discord.gg/xY8WJt7VGr)

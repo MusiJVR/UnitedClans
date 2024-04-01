@@ -66,6 +66,8 @@ public final class UnitedClans extends JavaPlugin implements Listener {
         getServer().getPluginCommand("letterclan").setTabCompleter(new LetterClanTabCompleter());
         getServer().getPluginCommand("helpclan").setExecutor(new HelpClanCommand());
         getServer().getPluginCommand("helpclan").setTabCompleter(new HelpClanTabCompleter());
+        getServer().getPluginCommand("infoclan").setExecutor(new InfoClanCommand(sql));
+        getServer().getPluginCommand("infoclan").setTabCompleter(new InfoClanTabCompleter(sql));
 
         if (getServer().getPluginManager().getPlugin("PlaceholderAPI") != null) {
             new PlaceholderAPIHook(this, sql).register();

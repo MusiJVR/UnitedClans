@@ -10,7 +10,7 @@ import java.util.*;
 
 
 public class ShowClanUtils {
-    public static void showClan (JavaPlugin plugin, SqliteDriver sql) {
+    public static void showClan(JavaPlugin plugin, SqliteDriver sql) {
         try {
             List<Map<String, Object>> rsPlayerClan = sql.sqlSelectData("ClanID, PlayerName", "PLAYERS");
             ScoreboardManager manager = Bukkit.getScoreboardManager();

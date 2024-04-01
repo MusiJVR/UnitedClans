@@ -1,6 +1,5 @@
 package unitedclans.command;
 
-import org.bukkit.ChatColor;
 import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -45,8 +44,8 @@ public class LetterClanCommand implements CommandExecutor {
                     return GeneralUtils.checkUtil(playerSender, language, "NO_LETTER_WRITTEN", true);
                 }
 
-                String letterpattern = LocalizationUtils.langCheck(language, "LETTER_MESSAGE");
-                sender.sendMessage(letterpattern.replace("%letter%", msgLetter));
+                String msgLetterPattern = LocalizationUtils.langCheck(language, "LETTER_MESSAGE");
+                sender.sendMessage(msgLetterPattern.replace("%letter%", msgLetter));
                 playerSender.playSound(playerSender.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
                 sql.sqlUpdateData("PLAYERS", "LetterRead = " + 0, "UUID = '" + uuid + "'");
                 return true;

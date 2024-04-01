@@ -60,8 +60,8 @@ public class BankDepositClanCommand implements CommandExecutor {
 
             GeneralUtils.removeItems(playerSender, deposit);
 
-            String successfullydepositbankmsg = LocalizationUtils.langCheck(language, "SUCCESSFULLY_DEPOSIT_BANK");
-            sender.sendMessage(successfullydepositbankmsg.replace("%value%", deposit.toString()));
+            String msgSuccessfullyDepositBank = LocalizationUtils.langCheck(language, "SUCCESSFULLY_DEPOSIT_BANK");
+            sender.sendMessage(msgSuccessfullyDepositBank.replace("%value%", deposit.toString()));
             playerSender.playSound(playerSender.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
 
             List<Map<String, Object>> rsClan = sql.sqlSelectData("ClanName", "CLANS", "ClanID = " + senderClanID);

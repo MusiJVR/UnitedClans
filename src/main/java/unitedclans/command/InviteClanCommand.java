@@ -90,12 +90,12 @@ public class InviteClanCommand implements CommandExecutor {
             insertMap.put("ClanID", getClanID);
             sql.sqlInsertData("INVITATIONS", insertMap);
 
-            String invitationmsg = LocalizationUtils.langCheck(language, "INVITATION");
-            TextComponent acceptmsg = new TextComponent(LocalizationUtils.langCheck(language, "ACCEPT"));
-            acceptmsg.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(LocalizationUtils.langCheck(language, "CLICK_INVITE"))));
-            acceptmsg.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/acceptclan"));
-            playerName.sendMessage(invitationmsg.replace("%clan%", clanName).replace("%player%", sender.getName()));
-            playerName.sendMessage(acceptmsg);
+            String msgInvitation = LocalizationUtils.langCheck(language, "INVITATION");
+            TextComponent msgAccept = new TextComponent(LocalizationUtils.langCheck(language, "ACCEPT"));
+            msgAccept.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new Text(LocalizationUtils.langCheck(language, "CLICK_INVITE"))));
+            msgAccept.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/acceptclan"));
+            playerName.sendMessage(msgInvitation.replace("%clan%", clanName).replace("%player%", sender.getName()));
+            playerName.sendMessage(msgAccept);
             sender.sendMessage(LocalizationUtils.langCheck(language, "INVITATION_SENT"));
             playerSender.playSound(playerSender.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
 

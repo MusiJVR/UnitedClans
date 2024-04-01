@@ -73,7 +73,7 @@ public class SetRoleClanCommand implements CommandExecutor {
 
             sql.sqlUpdateData("PLAYERS", "ClanRole = '" + playerRoleInput + "'", "PlayerName = '" + playerNameInput + "'");
 
-            String successfullychangedrolemsg = LocalizationUtils.langCheck(language, "SUCCESSFULLY_CHANGED_ROLE");
+            String msgSuccessfullyChangedRole = LocalizationUtils.langCheck(language, "SUCCESSFULLY_CHANGED_ROLE");
             String setPlayerRole = null;
 
             if (Objects.equals(playerRoleInput, UnitedClans.getInstance().getConfig().getString("roles.elder"))) {
@@ -82,12 +82,12 @@ public class SetRoleClanCommand implements CommandExecutor {
                 setPlayerRole = LocalizationUtils.langCheck(language, "MEMBER");
             }
 
-            playerSender.sendMessage(successfullychangedrolemsg.replace("%role%", setPlayerRole));
+            playerSender.sendMessage(msgSuccessfullyChangedRole.replace("%role%", setPlayerRole));
             playerSender.playSound(playerSender.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
             Player argPlayerName = plugin.getServer().getPlayer(playerNameInput);
             if (argPlayerName != null) {
-                String youbeenassignedmsg = LocalizationUtils.langCheck(language, "YOU_BEEN_ASSIGNED");
-                argPlayerName.sendMessage(youbeenassignedmsg.replace("%role%", setPlayerRole));
+                String msgYouBeenAssigned = LocalizationUtils.langCheck(language, "YOU_BEEN_ASSIGNED");
+                argPlayerName.sendMessage(msgYouBeenAssigned.replace("%role%", setPlayerRole));
                 argPlayerName.playSound(argPlayerName.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
             }
 

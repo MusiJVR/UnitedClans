@@ -67,20 +67,20 @@ public class LeaveClanCommand implements CommandExecutor {
             sql.sqlUpdateData("CLANS", "CountMembers = CountMembers - 1", "ClanID = " + LeavingPlayerClanID);
 
             List<Map<String, Object>> rsClanPlayers = sql.sqlSelectData("PlayerName", "PLAYERS", "ClanID = " + LeavingPlayerClanID);
-            String playerleavemsg = LocalizationUtils.langCheck(language, "PLAYER_LEAVE");
+            String msgPlayerLeave = LocalizationUtils.langCheck(language, "PLAYER_LEAVE");
             for (Map<String, Object> i : rsClanPlayers) {
                 String playerNameClan = (String) i.get("PlayerName");
                 Player playerClan = plugin.getServer().getPlayer(playerNameClan);
                 if (playerClan == null || playerClan == playerSender) {
                     continue;
                 }
-                playerClan.sendMessage(playerleavemsg.replace("%player%", playerSender.getName()));
+                playerClan.sendMessage(msgPlayerLeave.replace("%player%", playerSender.getName()));
             }
 
             List<Map<String, Object>> rsClanName = sql.sqlSelectData("ClanName", "CLANS", "ClanID = " + LeavingPlayerClanID);
             String LeavingPlayerClanName = (String) rsClanName.get(0).get("ClanName");
-            String successfullyleftmsg = LocalizationUtils.langCheck(language, "SUCCESSFULLY_LEFT");
-            playerSender.sendMessage(successfullyleftmsg.replace("%clan%", LeavingPlayerClanName));
+            String msgSuccessfullyLeft = LocalizationUtils.langCheck(language, "SUCCESSFULLY_LEFT");
+            playerSender.sendMessage(msgSuccessfullyLeft.replace("%clan%", LeavingPlayerClanName));
             playerSender.playSound(playerSender.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
 
             ShowClanUtils.showClan(plugin, sql);

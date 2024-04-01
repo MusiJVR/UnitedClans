@@ -97,8 +97,8 @@ public class CreateClanCommand implements CommandExecutor {
 
             GeneralUtils.removeItems(playerSender, price);
 
-            String createclanmsg = LocalizationUtils.langCheck(language, "SUCCESS_CREATE_CLAN");
-            sender.sendMessage(createclanmsg.replace("%clan%", clanNameInput));
+            String msgCreateClan = LocalizationUtils.langCheck(language, "SUCCESS_CREATE_CLAN");
+            sender.sendMessage(msgCreateClan.replace("%clan%", clanNameInput));
             playerSender.playSound(playerSender.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
 
             ShowClanUtils.showClan(plugin, sql);

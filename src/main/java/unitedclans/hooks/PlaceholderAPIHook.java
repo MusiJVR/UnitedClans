@@ -71,7 +71,7 @@ public class PlaceholderAPIHook extends PlaceholderExpansion {
                         List<Map<String, Object>> rsClanCountMembers = sql.sqlSelectData("CountMembers", "CLANS", "ClanID = " + clanID);
                         Integer countMembers = (Integer) rsClanCountMembers.get(0).get("CountMembers");
 
-                        return countMembers.toString() + " ";
+                        return ChatColor.YELLOW + countMembers.toString() + "☠ " + ChatColor.RESET;
                     }
 
                     return "";
@@ -87,7 +87,7 @@ public class PlaceholderAPIHook extends PlaceholderExpansion {
                         List<Map<String, Object>> rsClanKills = sql.sqlSelectData("Kills", "CLANS", "ClanID = " + clanID);
                         Integer clanKills = (Integer) rsClanKills.get(0).get("Kills");
 
-                        return ChatColor.DARK_RED + clanKills.toString() + "\uD83D\uDDE1" + " ";
+                        return ChatColor.DARK_RED + clanKills.toString() + "\uD83D\uDDE1 " + ChatColor.RESET;
                     }
 
                     return "";
@@ -103,7 +103,7 @@ public class PlaceholderAPIHook extends PlaceholderExpansion {
                         List<Map<String, Object>> rsClanBank = sql.sqlSelectData("Bank", "CLANS", "ClanID = " + clanID);
                         Integer clanBank = (Integer) rsClanBank.get(0).get("Bank");
 
-                        return ChatColor.DARK_GREEN + clanBank.toString() + "$" + " ";
+                        return ChatColor.DARK_GREEN + clanBank.toString() + "$ " + ChatColor.RESET;
                     }
 
                     return "";
@@ -140,7 +140,7 @@ public class PlaceholderAPIHook extends PlaceholderExpansion {
                     List<Map<String, Object>> rsPlayerKills = sql.sqlSelectData("Kills", "PLAYERS", "UUID = '" + player.getUniqueId() + "'");
                     Integer playerKills = (Integer) rsPlayerKills.get(0).get("Kills");
 
-                    return ChatColor.DARK_RED + playerKills.toString() + "\uD83D\uDDE1" + " ";
+                    return ChatColor.DARK_RED + playerKills.toString() + "\uD83D\uDDE1 " + ChatColor.RESET;
                 } catch (Exception e) {
                     System.err.println(e.getClass().getName() + ": " + e.getMessage());
                 }
@@ -149,7 +149,7 @@ public class PlaceholderAPIHook extends PlaceholderExpansion {
                     List<Map<String, Object>> rsPlayerDonations = sql.sqlSelectData("Donations", "PLAYERS", "UUID = '" + player.getUniqueId() + "'");
                     Integer playerDonations = (Integer) rsPlayerDonations.get(0).get("Donations");
 
-                    return ChatColor.DARK_GREEN + playerDonations.toString() + "$" + " ";
+                    return ChatColor.DARK_GREEN + playerDonations.toString() + "$ " + ChatColor.RESET;
                 } catch (Exception e) {
                     System.err.println(e.getClass().getName() + ": " + e.getMessage());
                 }

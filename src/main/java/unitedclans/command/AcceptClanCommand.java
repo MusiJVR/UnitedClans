@@ -48,18 +48,18 @@ public class AcceptClanCommand implements CommandExecutor {
             String clanName = (String) rsClan.get(0).get("ClanName");
 
             List<Map<String, Object>> rsClanPlayers = sql.sqlSelectData("PlayerName", "PLAYERS", "ClanID = " + ClanID);
-            String playerjoinedmsg = LocalizationUtils.langCheck(language, "PLAYER_JOINED");
+            String msgPlayerJoined = LocalizationUtils.langCheck(language, "PLAYER_JOINED");
             for (Map<String, Object> i : rsClanPlayers) {
                 String playerName = (String) i.get("PlayerName");
                 Player playerClan = plugin.getServer().getPlayer(playerName);
                 if (playerClan == null) {
                     continue;
                 }
-                playerClan.sendMessage(playerjoinedmsg.replace("%player%", playerSender.getName()));
+                playerClan.sendMessage(msgPlayerJoined.replace("%player%", playerSender.getName()));
             }
 
-            String joinedclanmsg = LocalizationUtils.langCheck(language, "SUCCESSFULLY_JOINED_CLAN");
-            sender.sendMessage(joinedclanmsg.replace("%clan%", clanName));
+            String msgJoinedClan = LocalizationUtils.langCheck(language, "SUCCESSFULLY_JOINED_CLAN");
+            sender.sendMessage(msgJoinedClan.replace("%clan%", clanName));
             playerSender.playSound(playerSender.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
 
             sql.sqlUpdateData("PLAYERS", "ClanID = " + ClanID + ", ClanRole = '" + UnitedClans.getInstance().getConfig().getString("roles.member") + "', LetterRead = " + 0, "UUID = '" + uuid + "'");

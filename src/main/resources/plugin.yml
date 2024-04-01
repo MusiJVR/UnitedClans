@@ -6,6 +6,16 @@ authors: [MouseJava]
 softdepend: [PlaceholderAPI]
 description: The plugin implements the clan system in Minecraft
 commands:
+  infoclan:
+    description: This command allows you to view information about the clan
+    usage: /<command> <clan name (not necessary)>
+    aliases:
+      - ic
+  helpclan:
+    description: This command allows you to display all possible plugin commands
+    usage: /<command>
+    aliases:
+      - hclan
   createclan:
     description: This command allows you to create a clan
     usage: /<command> <clan name> <color>
@@ -81,8 +91,3 @@ commands:
     usage: /<command> <letter (not necessary)>
     aliases:
       - letclan
-  helpclan:
-    description: This command allows you to display all possible plugin commands
-    usage: /<command>
-    aliases:
-      - hclan

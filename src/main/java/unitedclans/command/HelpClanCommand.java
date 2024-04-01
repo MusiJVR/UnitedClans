@@ -23,6 +23,12 @@ public class HelpClanCommand implements CommandExecutor {
 
         if (language.equals("en_en")) {
             sender.sendMessage("§b§l⏴-------§r§e§lUnitedClans§r§b§l-------⏵§r \n" +
+                    "§bCommand:§r §ehelpclan§r \n" +
+                    "§bDescription:§r §eThis command allows you to display all possible plugin commands§r \n" +
+                    "§bUsage:§r §e/<command>§r \n \n" +
+                    "§bCommand:§r §einfoclan§r \n" +
+                    "§bDescription:§r §eThis command allows you to view information about the clan§r \n" +
+                    "§bUsage:§r §e/<command> <clan name (not necessary)>§r \n \n" +
                     "§bCommand:§r §ecreateclan§r \n" +
                     "§bDescription:§r §eThis command allows you to create a clan§r \n" +
                     "§bUsage:§r §e/<command> <clan name> <color>§r \n \n" +
@@ -64,13 +70,16 @@ public class HelpClanCommand implements CommandExecutor {
                     "§bUsage:§r §e/<command> <top name>§r \n \n" +
                     "§bCommand:§r §eletterclan§r \n" +
                     "§bDescription:§r §eThis command allows you to create and view a letter to the clan§r \n" +
-                    "§bUsage:§r §e/<command> <letter (not necessary)>§r \n \n" +
-                    "§bCommand:§r §ehelpclan§r \n" +
-                    "§bDescription:§r §eThis command allows you to display all possible plugin commands§r \n" +
-                    "§bUsage:§r §e/<command>§r \n" +
+                    "§bUsage:§r §e/<command> <letter (not necessary)>§r \n" +
                     "§b§l⏴--------------------------⏵§r");
         } else if (language.equals("ru_ru")) {
             sender.sendMessage("§b§l⏴-------§r§e§lUnitedClans§r§b§l-------⏵§r \n" +
+                    "§bКоманда:§r §ehelpclan§r \n" +
+                    "§bОписание:§r §eЭта команда позволяет отображать все возможные команды плагина§r \n" +
+                    "§bИспользование:§r §e/<command>§r \n \n" +
+                    "§bКоманда:§r §einfoclan§r \n" +
+                    "§bОписание:§r §eЭта команда позволяет просмотреть информацию о клане§r \n" +
+                    "§bИспользование:§r §e/<command> <clan name (not necessary)>§r \n \n" +
                     "§bКоманда:§r §ecreateclan§r \n" +
                     "§bОписание:§r §eЭта команда позволяет создать клан§r \n" +
                     "§bИспользование:§r §e/<command> <clan name> <color>§r \n \n" +
@@ -112,13 +121,16 @@ public class HelpClanCommand implements CommandExecutor {
                     "§bИспользование:§r §e/<command> <top name>§r \n \n" +
                     "§bКоманда:§r §eletterclan§r \n" +
                     "§bОписание:§r §eДанная команда позволяет создать и просмотреть письмо клану§r \n" +
-                    "§bИспользование:§r §e/<command> <letter (not necessary)>§r \n \n" +
-                    "§bКоманда:§r §ehelpclan§r \n" +
-                    "§bОписание:§r §eЭта команда позволяет отображать все возможные команды плагина§r \n" +
-                    "§bИспользование:§r §e/<command>§r \n" +
+                    "§bИспользование:§r §e/<command> <letter (not necessary)>§r \n" +
                     "§b§l⏴--------------------------⏵§r");
         } else {
             sender.sendMessage("§b§l⏴-------§r§e§lUnitedClans§r§b§l-------⏵§r \n" +
+                    "§bCommand:§r §ehelpclan§r \n" +
+                    "§bDescription:§r §eThis command allows you to display all possible plugin commands§r \n" +
+                    "§bUsage:§r §e/<command>§r \n \n" +
+                    "§bCommand:§r §einfoclan§r \n" +
+                    "§bDescription:§r §eThis command allows you to view information about the clan§r \n" +
+                    "§bUsage:§r §e/<command> <clan name (not necessary)>§r \n \n" +
                     "§bCommand:§r §ecreateclan§r \n" +
                     "§bDescription:§r §eThis command allows you to create a clan§r \n" +
                     "§bUsage:§r §e/<command> <clan name> <color>§r \n \n" +
@@ -160,10 +172,7 @@ public class HelpClanCommand implements CommandExecutor {
                     "§bUsage:§r §e/<command> <top name>§r \n \n" +
                     "§bCommand:§r §eletterclan§r \n" +
                     "§bDescription:§r §eThis command allows you to create and view a letter to the clan§r \n" +
-                    "§bUsage:§r §e/<command> <letter (not necessary)>§r \n \n" +
-                    "§bCommand:§r §ehelpclan§r \n" +
-                    "§bDescription:§r §eThis command allows you to display all possible plugin commands§r \n" +
-                    "§bUsage:§r §e/<command>§r \n" +
+                    "§bUsage:§r §e/<command> <letter (not necessary)>§r \n" +
                     "§b§l⏴--------------------------⏵§r");
         }
         playerSender.playSound(playerSender.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);

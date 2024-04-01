@@ -89,8 +89,8 @@ public class KickClanCommand implements CommandExecutor {
             List<Map<String, Object>> rsClanName = sql.sqlSelectData("ClanName", "CLANS", "ClanID = " + KickedPlayerClanID);
             String KickedPlayerClanName = (String) rsClanName.get(0).get("ClanName");
             if (argPlayerName != null) {
-                String youwaskickedmsg = LocalizationUtils.langCheck(language, "YOU_WAS_KICKED");
-                argPlayerName.sendMessage(youwaskickedmsg.replace("%clan%", KickedPlayerClanName));
+                String msgYouWasKicked = LocalizationUtils.langCheck(language, "YOU_WAS_KICKED");
+                argPlayerName.sendMessage(msgYouWasKicked.replace("%clan%", KickedPlayerClanName));
                 argPlayerName.playSound(argPlayerName.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
             }
 

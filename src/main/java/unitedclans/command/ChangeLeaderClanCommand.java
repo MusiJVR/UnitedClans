@@ -80,12 +80,12 @@ public class ChangeLeaderClanCommand implements CommandExecutor {
             sql.sqlUpdateData("PLAYERS", "ClanRole = '" + UnitedClans.getInstance().getConfig().getString("roles.elder") + "'", "UUID = '" + uuid + "'");
             sql.sqlUpdateData("PLAYERS", "ClanRole = '" + PlayerRole + "'", "PlayerName = '" + playerName + "'");
 
-            String successfullychangeleadermsg = LocalizationUtils.langCheck(language, "SUCCESSFULLY_CHANGE_LEADER");
-            sender.sendMessage(successfullychangeleadermsg.replace("%player%", playerName));
+            String msgSuccessfullyChangeLeader = LocalizationUtils.langCheck(language, "SUCCESSFULLY_CHANGE_LEADER");
+            sender.sendMessage(msgSuccessfullyChangeLeader.replace("%player%", playerName));
             playerSender.playSound(playerSender.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
 
             List<Map<String, Object>> rsClanPlayers = sql.sqlSelectData("PlayerName", "PLAYERS", "ClanID = " + PlayerClanID);
-            String changeleadermsg = LocalizationUtils.langCheck(language, "CHANGE_LEADER");
+            String msgChangeLeader = LocalizationUtils.langCheck(language, "CHANGE_LEADER");
             for (Map<String, Object> i : rsClanPlayers) {
                 String playerNameClan = (String) i.get("PlayerName");
                 Player playerClan = plugin.getServer().getPlayer(playerNameClan);
@@ -93,7 +93,7 @@ public class ChangeLeaderClanCommand implements CommandExecutor {
                     continue;
                 }
 
-                playerClan.sendMessage(changeleadermsg.replace("%old-leader%", playerSender.getName()).replace("%new-leader%", playerName));
+                playerClan.sendMessage(msgChangeLeader.replace("%old-leader%", playerSender.getName()).replace("%new-leader%", playerName));
                 playerClan.playSound(playerSender.getLocation(), Sound.ENTITY_PLAYER_LEVELUP, 1.0f, 1.0f);
             }
 

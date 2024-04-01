@@ -12,7 +12,7 @@ import java.util.*;
 public class MenuClanUtils {
     public static void openClanMenu(Player player) {
         String language = UnitedClans.getInstance().getConfig().getString("lang");
-        Inventory clanMenuGUI = Bukkit.createInventory(player, 27, ChatColor.BOLD + LocalizationUtils.langCheck(language, "CLAN_MENU"));
+        Inventory clanMenuGUI = Bukkit.createInventory(player, 36, ChatColor.BOLD + LocalizationUtils.langCheck(language, "CLAN_MENU"));
 
         ItemStack clanBank = new ItemStack(Material.GOLD_BLOCK, 1);
         ItemMeta clanBank_meta = clanBank.getItemMeta();
@@ -30,16 +30,7 @@ public class MenuClanUtils {
         players_lore.add(ChatColor.GRAY + LocalizationUtils.langCheck(language, "CLAN_MEMBERS_DESCRIPTION"));
         players_meta.setLore(players_lore);
         players.setItemMeta(players_meta);
-        clanMenuGUI.setItem(12, players);
-
-        ItemStack clanSettings = new ItemStack(Material.WRITABLE_BOOK, 1);
-        ItemMeta clanSettings_meta = clanSettings.getItemMeta();
-        clanSettings_meta.setDisplayName(ChatColor.RESET + (ChatColor.DARK_PURPLE + LocalizationUtils.langCheck(language, "CLAN_SETTINGS")));
-        ArrayList<String> clanSettings_lore = new ArrayList<>();
-        clanSettings_lore.add(ChatColor.GRAY + LocalizationUtils.langCheck(language, "CLAN_SETTINGS_DESCRIPTION"));
-        clanSettings_meta.setLore(clanSettings_lore);
-        clanSettings.setItemMeta(clanSettings_meta);
-        clanMenuGUI.setItem(14, clanSettings);
+        clanMenuGUI.setItem(13, players);
 
         ItemStack topClans = new ItemStack(Material.BEACON, 1);
         ItemMeta topClans_meta = topClans.getItemMeta();
@@ -49,6 +40,24 @@ public class MenuClanUtils {
         topClans_meta.setLore(topClans_lore);
         topClans.setItemMeta(topClans_meta);
         clanMenuGUI.setItem(16, topClans);
+
+        ItemStack clanSettings = new ItemStack(Material.WRITABLE_BOOK, 1);
+        ItemMeta clanSettings_meta = clanSettings.getItemMeta();
+        clanSettings_meta.setDisplayName(ChatColor.RESET + (ChatColor.DARK_PURPLE + LocalizationUtils.langCheck(language, "CLAN_SETTINGS")));
+        ArrayList<String> clanSettings_lore = new ArrayList<>();
+        clanSettings_lore.add(ChatColor.GRAY + LocalizationUtils.langCheck(language, "CLAN_SETTINGS_DESCRIPTION"));
+        clanSettings_meta.setLore(clanSettings_lore);
+        clanSettings.setItemMeta(clanSettings_meta);
+        clanMenuGUI.setItem(20, clanSettings);
+
+        ItemStack clanInfo = new ItemStack(Material.HEART_OF_THE_SEA, 1);
+        ItemMeta clanInfo_meta = clanInfo.getItemMeta();
+        clanInfo_meta.setDisplayName(ChatColor.RESET + (ChatColor.GOLD + LocalizationUtils.langCheck(language, "CLAN_INFO")));
+        ArrayList<String> clanInfo_lore = new ArrayList<>();
+        clanInfo_lore.add(ChatColor.GRAY + LocalizationUtils.langCheck(language, "CLAN_INFO_DESCRIPTION"));
+        clanInfo_meta.setLore(clanInfo_lore);
+        clanInfo.setItemMeta(clanInfo_meta);
+        clanMenuGUI.setItem(24, clanInfo);
 
         player.openInventory(clanMenuGUI);
     }
