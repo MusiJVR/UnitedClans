@@ -13,6 +13,7 @@ public class ShowClanUtils {
         List<Map<String, Object>> rsPlayerClan = dbDriver.selectData("clan_id, player_name", "players", null);
         ScoreboardManager manager = Bukkit.getScoreboardManager();
         Scoreboard board = manager.getNewScoreboard();
+        boolean accept = false;
 
         for (Map<String, Object> i : rsPlayerClan) {
             int getClanID = (int) i.get("clan_id");
@@ -31,6 +32,7 @@ public class ShowClanUtils {
 
             if (getClanID == 0) {
                 getPlayer.setDisplayName(getPlayer.getName());
+                accept = true;
                 continue;
             }
 
@@ -41,7 +43,9 @@ public class ShowClanUtils {
             clan.addPlayer(getPlayer);
             clan.setPrefix(ChatColor.valueOf(clanColor) + (ChatColor.BOLD + clanName) + " ");
             getPlayer.setDisplayName(ChatColor.valueOf(clanColor) + (ChatColor.BOLD + clanName + ChatColor.RESET) + " " + getPlayer.getName());
+            accept = true;
         }
+        if (!accept) getPlayer.setDisplayName(getPlayer.getName());//мне нравится такое решения для теста
         for(Player onlinePlayer : Bukkit.getOnlinePlayers()){
             onlinePlayer.setScoreboard(board);
         }
